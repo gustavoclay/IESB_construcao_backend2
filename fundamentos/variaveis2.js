@@ -7,7 +7,6 @@ let idade = 25
 
 idade = 30
 
-
 console.log("NOME: ", primeiroNome + " " + nomeDoMeio + " " + ultimoNome)
 console.log("IDADE: " + idade)
 
