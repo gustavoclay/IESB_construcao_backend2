@@ -102,8 +102,14 @@ console.log(pessoa.nome)
 pessoa.nome = "Carlos andrade"
 console.log(pessoa.nome.toUpperCase())
 
-
-
+    // Operadores Aritméticos
+    // + - * / % **
+    // precedência
+    // ()
+    // **
+    //  * / %
+    // + -
+    // Math 
 
 
 
