@@ -28,45 +28,43 @@ app.get('/aluno', (req, res) => {
 })
 
 
-// PATH PARAM
+// PATH PARAM /pessoa/gustavo/20
 app.get('/pessoa/:nome/:idade', (req, res) => {
     console.log(req.params)
     const nomePessoa = req.params.nome
     const idadePessoa = req.params.idade
-
     let mais18 = null
-
     if (idadePessoa >= 18){
         mais18 = "Maior de idade"
     } else {
         mais18 = "Menor de idade"
     }
-    
     res.send(`
     Olá ${nomePessoa}! Tudo bem?
     Você é ${mais18}
     `)
 })
 
-//QUERY PARAM
+//QUERY PARAM /pessoa?nome=gustavo&idade=20
 app.get('/pessoa', (req, res) => {
     console.log(req.query)
     const nomePessoa = req.query.nome
     const idadePessoa = req.query.idade
-
     let mais18 = null
-
     if (idadePessoa >= 18) {
         mais18 = "Maior de idade"
     } else {
         mais18 = "Menor de idade"
     }
-
     res.send(`
     Olá ${nomePessoa}! Tudo bem?
     Você é ${mais18}
     `)
 })
+
+/* PARA CASA
+1. Faça uma api que receba quatro notas de um aluno, calcule e responda a média aritmética das notas e a mensagem de aprovado para média superior ou igual a 7.0 ou a mensagem de reprovado para média inferior a 7.0. 
+*/
 
 
 
