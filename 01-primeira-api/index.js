@@ -13,6 +13,10 @@ app.get("/nome", (req, res) => {
     res.send("João Paulo!")
 })
 
+app.get("/teste", (req, res) => {
+    res.send("TESTE GET OK!")
+})
+
 app.post("/teste", (req, res) => {
     res.send("TESTE POST OK!")
 })
@@ -22,6 +26,50 @@ app.post("/teste", (req, res) => {
 app.get('/aluno', (req, res) => {
     res.send("Aluno: Pedro João - Matricula: 202422")
 })
+
+
+// PATH PARAM
+app.get('/pessoa/:nome/:idade', (req, res) => {
+    console.log(req.params)
+    const nomePessoa = req.params.nome
+    const idadePessoa = req.params.idade
+
+    let mais18 = null
+
+    if (idadePessoa >= 18){
+        mais18 = "Maior de idade"
+    } else {
+        mais18 = "Menor de idade"
+    }
+    
+    res.send(`
+    Olá ${nomePessoa}! Tudo bem?
+    Você é ${mais18}
+    `)
+})
+
+//QUERY PARAM
+app.get('/pessoa', (req, res) => {
+    console.log(req.query)
+    const nomePessoa = req.query.nome
+    const idadePessoa = req.query.idade
+
+    let mais18 = null
+
+    if (idadePessoa >= 18) {
+        mais18 = "Maior de idade"
+    } else {
+        mais18 = "Menor de idade"
+    }
+
+    res.send(`
+    Olá ${nomePessoa}! Tudo bem?
+    Você é ${mais18}
+    `)
+})
+
+
+
 
 
 // startando servidor(backend - api) para escutar comunicações
