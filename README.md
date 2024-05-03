@@ -1,9 +1,6 @@
 # IESB_construcao_backend2
 
-
-# EXTENSÕES
-
-Tema: COBALT2
+## EXTENSÕES
 
 - Code Runner
 - IntelliCode
