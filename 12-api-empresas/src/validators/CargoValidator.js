@@ -2,9 +2,15 @@ const yup = require('yup')
 
 const schema = yup.object().shape(
     {
-        nome: yup.string().required(),
-        descricao: yup.string(),
-        salario: yup.number().min(1412).required()
+        nome: yup
+            .string("Campo nome precisa ser um texto")
+            .required("Campo nome é obrigatório"),
+        descricao: yup
+            .string("Campo descricao precisa ser um texto"),
+        salario: yup
+            .number("Campo salario precisa ser numerico")
+            .min(1412, "Campo salario precisa ser maior que o salario minimo")
+            .required("Campo salario é obrigatório")
     }
 )
 
