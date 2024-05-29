@@ -55,7 +55,7 @@ async function login(req, res) {
         },
         JWT_SECRET,
         {
-            expiresIn: '10s'
+            expiresIn: '10m'
         }
     )
 
